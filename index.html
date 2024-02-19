@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cajas</title>
+</head>
+<body align="center">
+        <h1>Contabilidad Cajas</h1>
+        <div>Caja 1: <input type="number" id="caja1">€</div><br>
+        <div>Caja 2: <input type="number" id="caja2">€</div><br>
+        <div>Caja 3: <input type="number" id="caja3">€</div><br>
+        <div>Caja 4: <input type="number" id="caja4">€</div><br>
+        <div>Caja 5: <input type="number" id="caja5">€</div><br>
+        <button onclick="calcular()">Calcular</button><br><br>
+        <div>Total: <input type="number" id="total" readonly>€</div><br>
+        <div>Minimo: <input type="number" id="min" readonly>€</div><br>
+        <div>Maximo: <input type="number" id="max" readonly>€</div><br>
+
+
+        <script>
+            
+            function calcular() {
+                let caja1 = parseInt(document.querySelector("#caja1").value)
+                let caja2 = parseInt(document.querySelector("#caja2").value)
+                let caja3 = parseInt(document.querySelector("#caja3").value)
+                let caja4 = parseInt(document.querySelector("#caja4").value)
+                let caja5 = parseInt(document.querySelector("#caja5").value)
+                
+                //calcular el total
+                totalCajas = parseInt(caja1 + caja2 + caja3+ caja4 + caja5);
+               document.querySelector("#total").value = totalCajas
+               //calcular el minimo
+               let minimo = Math.min(caja1,caja2,caja3,caja4,caja5);
+               document.querySelector("#min").value = minimo;
+               //calcular el maximo
+               let maximo = Math.max(caja1,caja2,caja3,caja4,caja5);
+               document.querySelector("#max").value = maximo;
+            };
+        </script>
+</body>
+</html>
